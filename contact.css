@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -135,9 +134,10 @@ body {
     color: #fff;
     font-size: 1em;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
+/* Bổ sung hiệu ứng hover cho button nếu chưa có */
 .contact-form button:hover {
     background: #00AFFF;
+    transition: background 0.3s;
 }
