@@ -29,3 +29,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Lấy các phần tử
+const proSidebarCard = document.getElementById("proSidebar");
+const modal = document.getElementById("projectModal");
+const closeBtn = document.querySelector(".close-modal");
+
+// Mở popup khi click Pro Sidebar
+proSidebarCard.addEventListener("click", () => {
+    modal.classList.add("active");
+});
+
+// Đóng popup khi click nút X
+closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+});
+
+// Đóng khi click ra ngoài nội dung
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
+});
