@@ -357,3 +357,38 @@ body {
     background: none;
     border: none;
 }
+
+/* Thêm CSS mới cho bố cục giống ảnh 1 */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    margin-bottom: 30px;
+}
+
+.hero-content .contact-btn {
+    margin-top: 0; /* Loại bỏ margin-top mặc định để căn chỉnh */
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 10px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+}
