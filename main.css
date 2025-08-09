@@ -378,7 +378,7 @@ body {
 }
 
 .hero-content .contact-btn {
-    margin-top: 0; /* Loại bỏ margin-top mặc định để căn chỉnh */
+    margin-top: 0;
 }
 
 @media (max-width: 768px) {
