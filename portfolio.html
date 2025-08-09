@@ -1,78 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Hồ Nguyên Duy Bảo</title>
-  <link rel="stylesheet" href="portfolio.css" />
-  <link rel="stylesheet" href="main.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Hồ Nguyên Duy Bảo</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="home.html" class="nav-link"><i class='bx bx-home'></i> HOME</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link"><i class='bx bx-user'></i> ABOUT</a></li>
+            <li class="nav-item"><a href="skills.html" class="nav-link"><i class='bx bx-code'></i> SKILLS</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link"><i class='bx bx-envelope'></i> CONTACT</a></li>
+            <li class="nav-item active"><a href="portfolio.html" class="nav-link"><i class='bx bx-briefcase'></i> PORTFOLIO</a></li>
+        </ul>
+    </nav>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <ul class="nav-menu">
-      <li><a href="home.html"><i class='bx bx-home'></i> HOME</a></li>
-      <li><a href="about.html"><i class='bx bx-user'></i> ABOUT</a></li>
-      <li><a href="skills.html"><i class='bx bx-code'></i> SKILLS</a></li>
-      <li class="active"><a href="portfolio.html"><i class='bx bx-briefcase'></i> PORTFOLIO</a></li>
-      <li><a href="contact.html"><i class='bx bx-envelope'></i> CONTACT</a></li>
-    </ul>
-  </nav>
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <h2>Danh Mục Dự Án</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <img src="images/pro-sidebar.jpg" alt="Pro Sidebar" />
+                <div class="card-overlay">
+                    <h3>PRO SIDEBAR</h3>
+                    <p>Responsive sidebar template built with Bootstrap</p>
+                    <a href="https://github.com/tainguyen161005/project1" target="_blank">View Project</a>
+                </div>
+            </div>
 
-  <!-- Portfolio Section -->
-  <section class="portfolio">
-    <h2>PORTFOLIO</h2>
-    <p>Checkout my recent work</p>
+            <div class="portfolio-card">
+                <img src="images/numgaz.png" alt="Numgaz" />
+                <div class="card-overlay">
+                    <h3>NUMGAZ</h3>
+                    <p>Map-based management system</p>
+                    <a href="https://github.com/tainguyen161005/project2" target="_blank">View Project</a>
+                </div>
+            </div>
 
-    <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <img src="images/pro-sidebar.jpg" alt="Pro Sidebar" />
-        <div class="card-overlay">
-          <h3>PRO SIDEBAR</h3>
-          <p>Responsive sidebar template built with Bootstrap</p>
-          <a href="https://github.com/tainguyen161005/project1" target="_blank">View Project</a>
+            <div class="portfolio-card">
+                <img src="images/travaux.webp" alt="Travaux" />
+                <div class="card-overlay">
+                    <h3>TRAVAUX</h3>
+                    <p>Project tracking web app</p>
+                    <a href="https://github.com/tainguyen161005/project3" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <img src="images/weblab.png" alt="Weblab" />
+                <div class="card-overlay">
+                    <h3>WEBLAB</h3>
+                    <p>Laboratory information system</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <img src="images/dashboard.png" alt="Dashboard" />
+                <div class="card-overlay">
+                    <h3>LIGHTNING DASHBOARD</h3>
+                    <p>Admin template built with Angular & Bootstrap</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="portfolio-card">
-        <img src="images/numgaz.png" alt="Numgaz" />
-        <div class="card-overlay">
-          <h3>NUMGAZ</h3>
-          <p>Map-based management system</p>
-          <a href="https://github.com/tainguyen161005/project2" target="_blank">View Project</a>
-        </div>
-      </div>
-
-      <div class="portfolio-card">
-        <img src="images/travaux.png" alt="Travaux" />
-        <div class="card-overlay">
-          <h3>TRAVAUX</h3>
-          <p>Project tracking web app</p>
-          <a href="https://github.com/tainguyen161005/project3" target="_blank">View Project</a>
-        </div>
-      </div>
-
-      <div class="portfolio-card">
-        <img src="images/weblab.png" alt="Weblab" />
-        <div class="card-overlay">
-          <h3>WEBLAB</h3>
-          <p>Laboratory information system</p>
-          <a href="#" target="_blank">View Project</a>
-        </div>
-      </div>
-
-      <div class="portfolio-card">
-        <img src="images/dashboard.png" alt="Dashboard" />
-        <div class="card-overlay">
-          <h3>LIGHTNING DASHBOARD</h3>
-          <p>Admin template built with Angular & Bootstrap</p>
-          <a href="#" target="_blank">View Project</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
+    <script src="main.js"></script>
+    <script src="portfolio.js"></script>
 </body>
 </html>
