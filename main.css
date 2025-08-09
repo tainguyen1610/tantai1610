@@ -56,7 +56,7 @@ body {
 .hero {
     text-align: center;
     padding: 100px 20px 50px;
-    background: url(images/background.htm) no-repeat center center fixed;
+    background: (images/background.htm) no-repeat center center fixed;
     background-size: cover;
     margin-top: 60px;
 }
@@ -112,7 +112,7 @@ body {
 .about {
     text-align: center;
     padding: 100px 20px 50px;
-    background: url(images/background.htm) no-repeat center center fixed;
+    background: (images/background.htm) no-repeat center center fixed;
     background-size: cover;
     margin-top: 60px;
 }
@@ -151,7 +151,7 @@ body {
 #skills {
     text-align: center;
     padding: 100px 20px 50px;
-    background: url(images/background.htm) no-repeat center center fixed;
+    background: (images/background.htm) no-repeat center center fixed;
     background-size: cover;
     margin-top: 60px;
 }
@@ -263,7 +263,7 @@ body {
 .portfolio {
     text-align: center;
     padding: 100px 20px 50px;
-    background: url(images/background.htm) no-repeat center center fixed;
+    background: (images/background.htm) no-repeat center center fixed;
     background-size: cover;
     margin-top: 60px;
 }
@@ -357,7 +357,7 @@ body {
 #contact {
     text-align: center;
     padding: 100px 20px 50px;
-    background: url(images/background.htm) no-repeat center center fixed;
+    background: (images/background.htm) no-repeat center center fixed;
     background-size: cover;
     margin-top: 60px;
 }
