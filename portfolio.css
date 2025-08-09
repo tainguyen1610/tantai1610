@@ -29,7 +29,7 @@ body {
 
 .portfolio {
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 20px 40px; /* Increased top padding for better spacing */
 }
 
 .portfolio h2 {
