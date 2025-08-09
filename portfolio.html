@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Hồ Nguyên Duy Bảo</title>
+    <title>Portfolio - Nguyễn Tấn Tài</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="portfolio.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -24,12 +24,12 @@
     <section class="portfolio">
         <h2>Danh Mục Dự Án</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-card">
+            <div class="portfolio-card" id="proSidebar">
                 <img src="images/pro-sidebar.jpg" alt="Pro Sidebar" />
                 <div class="card-overlay">
                     <h3>PRO SIDEBAR</h3>
                     <p>Responsive sidebar template built with Bootstrap</p>
-                    <a href="https://github.com/tainguyen161005/project1" target="_blank">View Project</a>
+                    <a href="javascript:void(0)">Xem Chi Tiết</a>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@
                 <div class="card-overlay">
                     <h3>WEBLAB</h3>
                     <p>Laboratory information system</p>
-                    <a href="#" target="_blank">View Project</a>
+                    <a href="#">View Project</a>
                 </div>
             </div>
 
@@ -65,11 +65,37 @@
                 <div class="card-overlay">
                     <h3>LIGHTNING DASHBOARD</h3>
                     <p>Admin template built with Angular & Bootstrap</p>
-                    <a href="#" target="_blank">View Project</a>
+                    <a href="#">View Project</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Popup Modal -->
+    <div id="projectModal" class="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-left">
+                <img src="images/pro-sidebar.jpg" alt="Pro Sidebar" />
+            </div>
+            <div class="modal-right">
+                <h2>PROSIDEBAR</h2>
+                <h4>Responsive Sidebar Template</h4>
+                <p>Responsive sidebar template with dropdown menu based on Bootstrap framework.  
+                   Tác giả: <strong>Nguyễn Tấn Tài</strong>
+                </p>
+                <div class="modal-tags">
+                    <span>Bootstrap</span>
+                    <span>JQuery</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>SASS</span>
+                    <span>Gulp</span>
+                </div>
+                <a href="https://github.com/tainguyen161005/project1" target="_blank" class="live-preview-btn">Live Preview</a>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
     <script src="portfolio.js"></script>
