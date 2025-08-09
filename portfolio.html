@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Nguyễn Tấn Tài</title>
-    <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="portfolio.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -24,48 +23,48 @@
     <section class="portfolio">
         <h2>Danh Mục Dự Án</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-card" id="proSidebar">
+            <div class="portfolio-card" data-project="prosidebar">
                 <img src="images/pro-sidebar.jpg" alt="Pro Sidebar" />
                 <div class="card-overlay">
                     <h3>PRO SIDEBAR</h3>
                     <p>Responsive sidebar template built with Bootstrap</p>
-                    <a href="javascript:void(0)">Xem Chi Tiết</a>
+                    <span class="view-details">Xem Chi Tiết</span>
                 </div>
             </div>
 
-            <div class="portfolio-card">
+            <div class="portfolio-card" data-project="numgaz">
                 <img src="images/numgaz.png" alt="Numgaz" />
                 <div class="card-overlay">
                     <h3>NUMGAZ</h3>
-                    <p>Map-based management system</p>
-                    <a href="https://github.com/tainguyen161005/project2" target="_blank">View Project</a>
+                    <p>Digitalization of gas networks - Map-based management system</p>
+                    <span class="view-details">Xem Chi Tiết</span>
                 </div>
             </div>
 
-            <div class="portfolio-card">
+            <div class="portfolio-card" data-project="travaux">
                 <img src="images/travaux.webp" alt="Travaux" />
                 <div class="card-overlay">
                     <h3>TRAVAUX</h3>
-                    <p>Project tracking web app</p>
-                    <a href="https://github.com/tainguyen161005/project3" target="_blank">View Project</a>
+                    <p>Project tracking and management web application</p>
+                    <span class="view-details">Xem Chi Tiết</span>
                 </div>
             </div>
 
-            <div class="portfolio-card">
+            <div class="portfolio-card" data-project="weblab">
                 <img src="images/weblab.png" alt="Weblab" />
                 <div class="card-overlay">
                     <h3>WEBLAB</h3>
-                    <p>Laboratory information system</p>
-                    <a href="#">View Project</a>
+                    <p>Laboratory information management system</p>
+                    <span class="view-details">Xem Chi Tiết</span>
                 </div>
             </div>
 
-            <div class="portfolio-card">
-                <img src="images/dashboard.png" alt="Dashboard" />
+            <div class="portfolio-card" data-project="dashboard">
+                <img src="images/dashboard.png" alt="Lightning Dashboard" />
                 <div class="card-overlay">
                     <h3>LIGHTNING DASHBOARD</h3>
                     <p>Admin template built with Angular & Bootstrap</p>
-                    <a href="#">View Project</a>
+                    <span class="view-details">Xem Chi Tiết</span>
                 </div>
             </div>
         </div>
@@ -76,28 +75,20 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-left">
-                <img src="images/pro-sidebar.jpg" alt="Pro Sidebar" />
+                <img id="modalImage" src="" alt="Project Image" />
             </div>
             <div class="modal-right">
-                <h2>PROSIDEBAR</h2>
-                <h4>Responsive Sidebar Template</h4>
-                <p>Responsive sidebar template with dropdown menu based on Bootstrap framework.  
-                   Tác giả: <strong>Nguyễn Tấn Tài</strong>
-                </p>
-                <div class="modal-tags">
-                    <span>Bootstrap</span>
-                    <span>JQuery</span>
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>SASS</span>
-                    <span>Gulp</span>
+                <h2 id="modalTitle">Project Title</h2>
+                <h4 id="modalSubtitle">Project Subtitle</h4>
+                <p id="modalDescription">Project description goes here...</p>
+                <div class="modal-tags" id="modalTags">
+                    <!-- Tags will be inserted here -->
                 </div>
-                <a href="https://github.com/tainguyen161005/project1" target="_blank" class="live-preview-btn">Live Preview</a>
+                <a href="#" id="modalLink" target="_blank" class="live-preview-btn">Live Preview</a>
             </div>
         </div>
     </div>
 
-    <script src="main.js"></script>
     <script src="portfolio.js"></script>
 </body>
 </html>
