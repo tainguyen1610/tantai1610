@@ -253,7 +253,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 80px 20px;
+    padding: 140px 20px 80px; /* Tăng padding-top từ 80px lên 140px để đẩy xuống */
+    margin-top: 60px; /* Thêm margin-top để cách xa navbar */
 }
 
 .portfolio-item {
@@ -390,5 +391,10 @@ body {
     }
     .hero-content p {
         font-size: 1em;
+    }
+    
+    /* Điều chỉnh cho mobile */
+    .portfolio-gallery {
+        padding: 120px 20px 60px;
     }
 }
