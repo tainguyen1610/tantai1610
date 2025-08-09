@@ -1,55 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    const modal = document.querySelector('.portfolio-modal');
-    const modalContent = document.querySelector('.modal-content');
-    const closeModal = document.querySelector('.close-modal');
-
-    portfolioItems.forEach(item => {
-        item.addEventListener('click', () => {
-            // Cập nhật nội dung modal dựa trên item được nhấp
-            const title = item.querySelector('h3').textContent;
-            const description = item.querySelector('p').textContent;
-            modalContent.innerHTML = `
-                <button class="close-modal">×</button>
-                <h2>${title}</h2>
-                <p>${description}</p>
-                <div class="modal-tags">
-                    <span>Tag 1</span>
-                    <span>Tag 2</span>
-                </div>
-            `;
-            modal.classList.add('active');
-        });
-    });
-
-    // Đóng modal khi nhấp vào nút close
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal || e.target.classList.contains('close-modal')) {
-            modal.classList.remove('active');
-        }
-    });
-});
-// Lấy các phần tử
-const proSidebarCard = document.getElementById("proSidebar");
-const modal = document.getElementById("projectModal");
-const closeBtn = document.querySelector(".close-modal");
-
-// Mở popup khi click Pro Sidebar
-proSidebarCard.addEventListener("click", () => {
-    modal.classList.add("active");
-});
-
-// Đóng popup khi click nút X
-closeBtn.addEventListener("click", () => {
-    modal.classList.remove("active");
-});
-
-// Đóng khi click ra ngoài nội dung
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.classList.remove("active");
-    }
-});
 // Project data với thông tin đầy đủ cho tất cả projects
 const projectData = {
     prosidebar: {
@@ -94,115 +42,133 @@ const projectData = {
     }
 };
 
-// Lấy các elements từ DOM
-const modal = document.getElementById("projectModal");
-const modalImage = document.getElementById("modalImage");
-const modalTitle = document.getElementById("modalTitle");
-const modalSubtitle = document.getElementById("modalSubtitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalTags = document.getElementById("modalTags");
-const modalLink = document.getElementById("modalLink");
-const closeBtn = document.querySelector(".close-modal");
-
-// Function để mở modal với thông tin project
+// Function để mở modal
 function openModal(projectKey) {
+    console.log('Opening modal for:', projectKey);
+    
+    const modal = document.getElementById("projectModal");
     const project = projectData[projectKey];
     
-    if (project) {
-        // Cập nhật nội dung modal
+    if (!project) {
+        console.error('Project not found:', projectKey);
+        return;
+    }
+    
+    if (!modal) {
+        console.error('Modal element not found');
+        return;
+    }
+    
+    // Cập nhật nội dung modal
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSubtitle = document.getElementById("modalSubtitle");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalTags = document.getElementById("modalTags");
+    const modalLink = document.getElementById("modalLink");
+    
+    if (modalImage) {
         modalImage.src = project.image;
         modalImage.alt = project.title;
-        modalTitle.textContent = project.title;
-        modalSubtitle.textContent = project.subtitle;
-        modalDescription.textContent = project.description;
-        modalLink.href = project.link;
-        
-        // Cập nhật tags
+    }
+    if (modalTitle) modalTitle.textContent = project.title;
+    if (modalSubtitle) modalSubtitle.textContent = project.subtitle;
+    if (modalDescription) modalDescription.textContent = project.description;
+    if (modalLink) modalLink.href = project.link;
+    
+    // Cập nhật tags
+    if (modalTags) {
         modalTags.innerHTML = '';
         project.tags.forEach(tag => {
             const tagElement = document.createElement('span');
             tagElement.textContent = tag;
             modalTags.appendChild(tagElement);
         });
-        
-        // Hiển thị modal
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
+    
+    // Hiển thị modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
 // Function để đóng modal
 function closeModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto'; // Restore scrolling
+    console.log('Closing modal');
+    const modal = document.getElementById("projectModal");
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 }
 
-// Event listeners khi DOM đã load
-document.addEventListener('DOMContentLoaded', () => {
-    // Thêm event listeners cho tất cả portfolio cards
-    document.querySelectorAll('.portfolio-card').forEach(card => {
-        card.addEventListener('click', (e) => {
+// Khởi tạo khi DOM loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Portfolio JavaScript initialized');
+    
+    // Lấy tất cả portfolio cards
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    console.log('Found cards:', portfolioCards.length);
+    
+    // Thêm click event cho từng card
+    portfolioCards.forEach(function(card) {
+        const projectKey = card.getAttribute('data-project');
+        console.log('Setting up card:', projectKey);
+        
+        card.addEventListener('click', function(e) {
             e.preventDefault();
-            const projectKey = card.getAttribute('data-project');
+            console.log('Card clicked:', projectKey);
             openModal(projectKey);
         });
-        
-        // Thêm hover effect cho cursor
-        card.addEventListener('mouseenter', () => {
-            card.style.cursor = 'pointer';
-        });
     });
 
-    // Đóng modal khi click vào nút close
+    // Setup close button
+    const closeBtn = document.querySelector(".close-modal");
     if (closeBtn) {
-        closeBtn.addEventListener("click", closeModal);
+        closeBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            closeModal();
+        });
     }
 
-    // Đóng modal khi click ra ngoài content
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            closeModal();
+    // Setup modal background click
+    const modal = document.getElementById("projectModal");
+    if (modal) {
+        modal.addEventListener("click", function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
+
+    // Setup escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById("projectModal");
+            if (modal && modal.classList.contains('active')) {
+                closeModal();
+            }
         }
     });
 
-    // Đóng modal bằng phím Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
-    });
-
-    // Prevent modal content click from closing modal
+    // Prevent modal content click from closing
     const modalContent = document.querySelector('.modal-content');
     if (modalContent) {
-        modalContent.addEventListener('click', (e) => {
+        modalContent.addEventListener('click', function(e) {
             e.stopPropagation();
         });
     }
-});
 
-// Animation cho cards khi scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Apply observer to cards khi DOM loaded
-document.addEventListener('DOMContentLoaded', () => {
+    // Scroll animation setup
     const cards = document.querySelectorAll('.portfolio-card');
-    cards.forEach((card, index) => {
+    cards.forEach(function(card, index) {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
-        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(card);
+        card.style.transition = 'opacity 0.6s ease ' + (index * 0.1) + 's, transform 0.6s ease ' + (index * 0.1) + 's';
+        
+        // Simple intersection observer
+        setTimeout(function() {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 100);
     });
 });
