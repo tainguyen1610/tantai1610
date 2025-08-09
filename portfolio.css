@@ -4,24 +4,29 @@ body {
   color: white;
   margin: 0;
 }
+
 .navbar {
   background-color: #1c1c1c;
   padding: 10px 0;
 }
+
 .nav-menu {
   display: flex;
   justify-content: center;
   gap: 20px;
   list-style: none;
 }
+
 .nav-menu a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
+
 .nav-menu .active a {
   color: #00d9ff;
 }
+
 .portfolio {
   text-align: center;
   padding: 100px 20px 50px;
@@ -29,6 +34,7 @@ body {
   background-size: cover;
   margin-top: 60px;
 }
+
 .portfolio h2 {
   font-size: 2.5em;
   margin: 0 0 20px;
@@ -36,6 +42,7 @@ body {
   letter-spacing: 2px;
   text-shadow: 0 0 10px #00AFFF;
 }
+
 .portfolio p {
   font-size: 1.1em;
   margin: 0 auto 20px;
@@ -43,6 +50,7 @@ body {
   color: #ccc;
   line-height: 1.6;
 }
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -50,21 +58,26 @@ body {
   max-width: 1100px;
   margin: 0 auto;
 }
+
 .portfolio-card {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   background-color: #222;
+  cursor: pointer;
 }
+
 .portfolio-card img {
   width: 100%;
   height: auto;
   display: block;
   transition: transform 0.5s ease;
 }
+
 .portfolio-card:hover img {
   transform: scale(1.1);
 }
+
 .card-overlay {
   position: absolute;
   inset: 0;
@@ -78,18 +91,22 @@ body {
   transition: opacity 0.4s ease;
   text-align: center;
 }
+
 .portfolio-card:hover .card-overlay {
   opacity: 1;
 }
+
 .card-overlay h3 {
   margin-bottom: 10px;
   color: #00d9ff;
 }
+
 .card-overlay p {
   margin-bottom: 15px;
   font-size: 0.9rem;
   color: #ccc;
 }
+
 .card-overlay a {
   padding: 10px 20px;
   background: rgba(0, 0, 0, 0.7);
@@ -101,4 +118,82 @@ body {
 
 .card-overlay a:hover {
   background: #00AFFF;
+}
+
+/* Popup Modal */
+.portfolio-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  color: #fff;
+  max-width: 900px;
+  width: 90%;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-left img {
+  max-width: 400px;
+  display: block;
+}
+
+.modal-right {
+  padding: 20px;
+}
+
+.modal-right h2 {
+  margin: 0;
+  color: #00d9ff;
+}
+
+.modal-right h4 {
+  margin-top: 5px;
+  font-weight: normal;
+  color: #ccc;
+}
+
+.modal-tags {
+  margin: 15px 0;
+}
+
+.modal-tags span {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #333;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+.live-preview-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00AFFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
 }
